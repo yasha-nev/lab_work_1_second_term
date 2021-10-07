@@ -1,0 +1,3 @@
+2 a b
+2 A B
+10 A a A Ba B b B Bb B Ab
