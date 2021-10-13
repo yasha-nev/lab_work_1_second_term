@@ -14,8 +14,8 @@ int main(int argc, char *argv[]){
 	vector <string> vn, vt, r, a, b;
 
 	fstream file(argv[1], ios_base::in);
-	vn = ReadString(file);
 	vt = ReadString(file);
+	vn = ReadString(file);
 	r = ReadString(file);
 
 	for (int i = 0; i < r.size(); i++){
@@ -25,33 +25,33 @@ int main(int argc, char *argv[]){
 
 	file.close();
 
-    Classificator cls(&vn, &vt, &a, &b);
+    Classificator cls(&vt, &vn, &a, &b);
     int type = cls.Define_type();
 
     switch(type)
     {
         case(0):
-            cout << "type 0" << endl;
+            cout << "Unrestricted Grammar (type 0)" << endl;
             break;
 
         case(1):
-            cout << "type 1" << endl;
+            cout << "Context-Sensitive grammar (type 1)" << endl;
             break;
 
         case(2):
-            cout << "type 2" << endl;
+            cout << "Context-Free Grammar (type 2)" << endl;
             break;
 
         case(3):
-            cout << "type 3 left" << endl;
+            cout << "Regular Grammar Left (type 3)" << endl;
             break;
 
         case(4):
-            cout << "type 3 rigth" << endl;
+            cout << " Regular Grammar Right (type 3)" << endl;
             break;
 
 	 case(-1):
-            cout << "noname type" << endl;
+            cout << "no type Grammar" << endl;
             break;
     }
 
